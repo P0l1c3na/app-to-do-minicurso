@@ -8,18 +8,36 @@ import {TarefasService} from '../../services/tarefas.service';
   styleUrls: ['./tarefas.page.scss'],
   standalone: false,
 })
-export class TarefasPage implements OnInit {
+export class TarefasPage {
 
   tarefas: Tarefa[] = [];
   tarefasService: TarefasService = inject(TarefasService);
 
   dataHoje = new Date();
 
-  constructor() { }
-
-  ngOnInit() {
-    this.tarefas = this.tarefasService.listarTarefas();
-    console.log(this.tarefas);
+  constructor() {
   }
 
+  // Ionic lifecycle hook: é executado sempre que a visualização está prestes a entrar e se tornar ativa
+  async ionViewWillEnter() {
+    await this.buscarTarefas();
+  }
+
+  async buscarTarefas() {
+    this.tarefas = await this.tarefasService.listarTarefasStorage();
+  }
+
+  getQuantidadeTarefasConcluidas() {
+    return this.tarefas.filter(tarefa => tarefa.concluido).length;
+  }
+
+  getQuantidadeTarefasNaoConcluidas() {
+    return this.tarefas.filter(tarefa => !tarefa.concluido).length;
+  }
+
+  async atualizarTarefa(tarefa: Tarefa) {
+    await this.tarefasService.atualizarTarefa(tarefa);
+    await this.buscarTarefas();
+    await this.tarefasService.presentToast('bottom', tarefa.concluido ? 'Tarefa concluída!' : 'Tarefa atualizada como pendente');
+  }
 }
