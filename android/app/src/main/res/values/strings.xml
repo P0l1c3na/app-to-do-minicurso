@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TO-DO IF Goiano</string>
+    <string name="title_activity_main">TO-DO IF Goiano</string>
+    <string name="package_name">ifgoiano.minicurso.ionicangular</string>
+    <string name="custom_url_scheme">ifgoiano.minicurso.ionicangular</string>
+</resources>
