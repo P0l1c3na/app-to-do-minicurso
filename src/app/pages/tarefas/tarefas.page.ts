@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {Tarefa} from '../../models/tarefa-model';
+import {TarefasService} from '../../services/tarefas.service';
 
 @Component({
   selector: 'app-tarefas',
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarefasPage implements OnInit {
 
+  tarefas: Tarefa[] = [];
+  tarefasService: TarefasService = inject(TarefasService);
+
+  dataHoje = new Date();
+
   constructor() { }
 
   ngOnInit() {
+    this.tarefas = this.tarefasService.listarTarefas();
+    console.log(this.tarefas);
   }
 
 }

@@ -10,4 +10,31 @@
       <ion-title size="large">Tarefas</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <div class="card-header-content">
+        <ion-card-title>{{dataHoje | date:'dd/MM/yyyy'}}</ion-card-title>
+        <ion-icon color="success" name="list-outline"></ion-icon>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        @for (tarefa of tarefas; track tarefa.id) {
+          <ion-item >
+            <ion-checkbox slot="start" color="success" ></ion-checkbox>
+            <ion-label>{{tarefa.titulo}}</ion-label>
+            <ion-note slot="end">{{tarefa.descricao}}</ion-note>
+          </ion-item>
+        }
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!--  #1 adicionar fab button-->
+  <ion-fab class="ion-margin" slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button routerLink="/nova-tarefa">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
