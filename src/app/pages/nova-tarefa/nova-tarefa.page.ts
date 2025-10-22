@@ -35,4 +35,9 @@ export class NovaTarefaPage implements OnInit {
     this.router.navigate(['tarefas']);
   }
 
+  cancelarTarefa() {
+    this.form.reset();
+    this.router.navigate(['tarefas']);
+  }
+
 }

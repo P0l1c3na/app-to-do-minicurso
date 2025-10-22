@@ -8,7 +8,7 @@ import {TarefasService} from '../../services/tarefas.service';
   styleUrls: ['./tarefas.page.scss'],
   standalone: false,
 })
-export class TarefasPage implements OnInit {
+export class TarefasPage {
 
   tarefas: Tarefa[] = [];
   tarefasService: TarefasService = inject(TarefasService);
@@ -17,9 +17,12 @@ export class TarefasPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  async ionViewWillEnter() {
+    this.buscarTarefas();
+  }
+
+  buscarTarefas(): void {
     this.tarefas = this.tarefasService.listarTarefas();
-    console.log(this.tarefas);
   }
 
 }
