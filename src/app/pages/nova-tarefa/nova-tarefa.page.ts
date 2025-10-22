@@ -35,4 +35,9 @@ export class NovaTarefaPage {
     await this.router.navigate(['tarefas']);
   }
 
+  cancelar() {
+    this.form.reset();
+    this.router.navigate(['tarefas']);
+  }
+
 }

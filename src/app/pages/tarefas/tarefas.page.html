@@ -22,10 +22,10 @@
       <ion-card-content>
         <ion-list>
           @for (tarefa of tarefas; track tarefa.id) {
-            <ion-item >
-              <ion-checkbox [(ngModel)]="tarefa.concluido" slot="start" color="success" (click)="atualizarTarefa(tarefa)" ></ion-checkbox>
-              <ion-label>{{tarefa.titulo}}</ion-label>
-              <ion-note slot="end">{{tarefa.descricao}}</ion-note>
+            <ion-item>
+              <ion-checkbox [(ngModel)]="tarefa.concluido" slot="start" color="success" (click)="atualizarTarefa(tarefa)"></ion-checkbox>
+              <ion-label [ngClass]="{'texto-taxado': tarefa.concluido}" >{{ tarefa.titulo }}</ion-label>
+              <ion-note slot="end" class="ion-text-wrap">{{ tarefa.descricao }}</ion-note>
             </ion-item>
           }
         </ion-list>
@@ -47,7 +47,7 @@
         <ion-card>
           <ion-card-header>
             <div class="card-header-content">
-              <ion-card-title>Pendentes</ion-card-title>
+              <ion-card-title>A Fazer</ion-card-title>
               <ion-icon color="danger" name="close-outline"></ion-icon>
             </div>
           </ion-card-header>
@@ -61,7 +61,7 @@
         <ion-card>
           <ion-card-header>
             <div class="card-header-content">
-              <ion-card-title>Concluídas</ion-card-title>
+              <ion-card-title>Feito</ion-card-title>
               <ion-icon color="success" name="checkmark-outline"></ion-icon>
             </div>
           </ion-card-header>

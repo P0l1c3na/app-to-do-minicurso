@@ -3,3 +3,9 @@
   justify-content: space-between; /* Distributes space between items */
   align-items: center; /* Vertically aligns items in the center */
 }
+
+.texto-taxado {
+  text-decoration: line-through;
+  color: var(--ion-color-medium);
+  opacity: 0.6;
+}
