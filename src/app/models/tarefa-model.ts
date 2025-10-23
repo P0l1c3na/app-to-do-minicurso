@@ -1,10 +1,10 @@
-export class Tarefa {
+export class TarefaModel {
   id: number;
   titulo: string;
   descricao: string;
-  concluido: string;
+  concluido: boolean;
 
-  constructor(id: number, titulo: string, descricao: string, concluido: string) {
+  constructor(id: number, titulo: string, descricao: string, concluido: boolean) {
     this.id = id;
     this.titulo = titulo;
     this.descricao = descricao;

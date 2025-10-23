@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {Tarefa} from '../../models/tarefa-model';
+import {TarefaModel} from '../../models/tarefa-model';
 import {TarefasService} from '../../services/tarefas.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {TarefasService} from '../../services/tarefas.service';
 })
 export class TarefasPage {
 
-  tarefas: Tarefa[] = [];
+  tarefas: TarefaModel[] = [];
   tarefasService: TarefasService = inject(TarefasService);
 
   dataHoje = new Date();

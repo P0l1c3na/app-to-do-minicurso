@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
-import {Tarefa} from '../models/tarefa-model';
+import {TarefaModel} from '../models/tarefa-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TarefasService {
 
-  tarefas: Tarefa[] = [];
+  tarefas: TarefaModel[] = [];
   proximoId = 0;
 
-  salvarTarefa(tarefa: Tarefa) {
+  salvarTarefa(tarefa: TarefaModel) {
     tarefa.id = this.proximoId;
     this.tarefas.push(tarefa);
     this.proximoId++;

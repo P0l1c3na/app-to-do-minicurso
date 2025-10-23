@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Tarefa} from '../../models/tarefa-model';
+import {TarefaModel} from '../../models/tarefa-model';
 import {TarefasService} from '../../services/tarefas.service';
 import {Router} from '@angular/router';
 
@@ -30,7 +30,7 @@ export class NovaTarefaPage implements OnInit {
   }
 
   salvarTarefa() {
-    const tarefa: Tarefa = this.form.getRawValue();
+    const tarefa: TarefaModel = this.form.getRawValue();
     this.tarefasService.salvarTarefa(tarefa);
     this.router.navigate(['tarefas']);
   }
