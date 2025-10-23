@@ -103,7 +103,7 @@ Dicas:
 - iOS (macOS): é necessário Xcode e uma conta de desenvolvimento para deploy em dispositivo físico
 
 ## Minicurso
-Este repositório é o modelo do minicurso de Ionic com Angular na quinta, 23 de outubro, das 13h às 17h.
+Este repositório é o modelo do minicurso de Ionic com Angular realizado na quinta feira, dia 23 de outubro de 2025, das 13h às 17h.
 
 ## Licença
 Uso educacional no contexto do minicurso. Ajuste conforme as políticas da sua organização.
